@@ -35,7 +35,7 @@ def ensure_ffmpeg() -> None:
             sys.exit(1)
 
 
-def run_ffmpeg_command(cmd) -> None:
+def run_ffmpeg_command(cmd: str) -> None:
     result = subprocess.run(cmd, shell=True, check=True)
     if result.returncode != 0:
         raise RuntimeError(f"FFmpeg error: {result.returncode}")
